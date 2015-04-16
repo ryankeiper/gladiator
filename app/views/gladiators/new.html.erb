@@ -1,0 +1,25 @@
+<% if @gladiator.errors.any? %>
+<h2><strong>Errors:</strong></h2>
+<ul>
+	<% @gladiator.errors.full_messages.each do |msg| %>
+		<li><%= msg %></li>
+	<% end %>
+</ul>
+<% end %>
+
+<p>Name your Gladiator!!!!</p>
+
+<%= form_for @gladiator do |f| %>
+   <%= f.label :name %>
+   <%= f.text_field :name %>
+<p>Now, arm this warrior!!</p>
+	
+	<%= radio_button_tag(:weapon, "Spear", class: "new") %>
+	<%= label_tag(:weapon, "Spear", class: "new") %>
+	<%= radio_button_tag(:weapon, "Club", class: "new") %>
+	<%= label_tag(:weapon, "Club", class: "new") %>
+	<%= radio_button_tag(:weapon, "Trident", class: "new") %>
+	<%= label_tag(:weapon, "Trident", class: "new") %>
+   
+   <%= f.submit 'Submit', id: 'submit' %>
+ <% end %>

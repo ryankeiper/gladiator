@@ -1,0 +1,7 @@
+<h1>Gladiators, Welcome to Battle!</h1>
+<h2>Warning: Only two gladiators may enter the arena at once!</h2>
+<h2><%= link_to "A New Gladiator is Born!", new_gladiator_path, class: "new" %></h2>
+<% @gladiators.each do |glad| %>
+	<div><%= link_to glad.name, gladiator_path(glad) %></div>
+<% end %>
+
